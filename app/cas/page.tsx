@@ -3,8 +3,9 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div>
-        about page <br />
-        시우 예원 민솔이가 만들었어욤
+       cas page
+       <p><b>Our Sweet Comma</b></p>
+       <p><i>Body building</i></p>
     </div>
   );
 }

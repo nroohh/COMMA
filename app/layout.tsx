@@ -27,7 +27,18 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <header className="fixed top-0 left-0 w-full h-16 bg-var(--background) z-50 p-4">
+          <div className="relative flex items-center w-full px-4">
+            <nav className="absolute left-1/2 top-1/2 transform -translate-x-1/2 flex space-x-20">
+              <a href="/" className="w-24 h-11 rounded-[40px] border-2 border-var(--foreground) flex items-center justify-center text-lg">Home</a>
+              <a href="/cas" className="w-24 h-11 rounded-[40px] border-2 border-var(--foreground) flex items-center justify-center text-lg">Cas</a>
+              <a href="/about" className="w-24 h-11 rounded-[40px] border-2 border-var(--foreground) flex items-center justify-center text-lg">About</a>
+            </nav>
+          </div>
+        </header>
+        <main className="mt-18">
         {children}
+        </main>
       </body>
     </html>
   );
