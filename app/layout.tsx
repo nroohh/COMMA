@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Bad_Script } from "next/font/google";
+
+
+const badScript = Bad_Script({
+  variable: "--font-bad-script",
+  subsets: ["latin"],
+  weight: "400"
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,25 +27,32 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <header className="fixed top-0 left-0 w-full h-16 bg-var(--background) z-50 p-4">
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}>
+        <header className="fixed top-0 left-0 w-full h-16 bg-[var(--background)] z-50 p-4">
           <div className="relative flex items-center w-full px-4">
+            <img
+              src="/favicon.svg"
+              alt="Logo"
+              className="h-12 w-12 var(--foreground) justify-between"
+            />
             <nav className="absolute left-1/2 top-1/2 transform -translate-x-1/2 flex space-x-20">
-              <a href="/" className="w-24 h-11 rounded-[40px] border-2 border-var(--foreground) flex items-center justify-center text-lg">Home</a>
-              <a href="/cas" className="w-24 h-11 rounded-[40px] border-2 border-var(--foreground) flex items-center justify-center text-lg">Cas</a>
-              <a href="/about" className="w-24 h-11 rounded-[40px] border-2 border-var(--foreground) flex items-center justify-center text-lg">About</a>
+              <a href="/" className="var(--foreground) flex items-center justify-center text-lg">
+                Home
+              </a>
+              <a href="/#cas" className="var(--foreground) flex items-center justify-center text-lg">
+                Cas
+              </a>
+              <a href="/about" className="var(--foreground) flex items-center justify-center text-lg">
+                About
+              </a>
             </nav>
           </div>
         </header>
-        <main className="mt-18">
-        {children}
+        <main className="pt-[80px] snap-y snap-mandatory h-screen overflow-y-scroll overflow-x-hidden">
+          {children}
         </main>
       </body>
     </html>
