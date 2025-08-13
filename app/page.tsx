@@ -186,7 +186,7 @@ export default function Home() {
           >
             <div
               className={`absolute inset-0 rounded-full transition-colors duration-300 ${
-                isSelected ? letterColors[letter] : "bg-white"
+                isSelected ? letterColors[letter] : "bg-[var(--background)]"
               }`}
               style={{ boxShadow: "var(--button1-shadow)" }}
             />
