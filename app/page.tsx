@@ -49,6 +49,7 @@ export function SearchBar({
         onClick={handleCircleClick}
         className="w-5 h-5 left-[442px] top-[10px] absolute rounded-full border-[3px] border-[var(--foreground)] bg-transparent"
         aria-label="검색 실행"
+        // Need to add 'bar' (돋보기 모양)
       />
     </div>
   );
@@ -111,7 +112,7 @@ export default function Home() {
   function generateItems(count: number, offset = 0) {
     return Array.from({ length: count }, (_, i) => ({
       id: i + offset,
-      image: "https://via.placeholder.com/100",
+      image: "https://via.placeholder.com/100", // Replace with actual image URLs
       title: `CAS Sample ${i + offset + 1}`,
     }));
   }
@@ -171,9 +172,9 @@ export default function Home() {
         {/* Main layout */}
         <div className="flex flex-row gap-8 relative z-10 items-start">
          {/* Condition Box */}
-<div
-  className="sticky top-20 z-20 flex-shrink-0 min-w-[56px] max-w-[72px] px-1 md:min-w-[64px] md:max-w-[88px] md:px-2"
->
+        <div
+        className="sticky top-20 z-20 flex-shrink-0 min-w-[56px] max-w-[72px] px-1 md:min-w-[64px] md:max-w-[88px] md:px-2"
+        >
   <div className="bg-[var(--background)] rounded-xl shadow-md p-2 w-full mx-auto relative">
     <div className="flex flex-col gap-4 items-center">
       {["C", "A", "S", "P"].map((letter) => {
