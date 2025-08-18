@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import { dbConnect } from "@/lib/db";
-import { Experience } from "@/models/experience";
+import { dbConnect } from "@/app/_lib/db";
+import { Experience } from "@/app/_models/experience";
 
 // DATA STRUCTURE
 
