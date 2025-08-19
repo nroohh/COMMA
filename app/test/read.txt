@@ -1,0 +1,3 @@
+brew install ngrok
+ngrok config add-authtoken <token>
+ngrok http <local-host-url>

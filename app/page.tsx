@@ -93,7 +93,7 @@ export default function Home() {
   };
 
   const letterColors: Record<string, string> = {
-    C: "bg-red-500",
+    C: "bg-[#FF4444]",
     A: "bg-lime-400",
     S: "bg-sky-400/70",
     P: "bg-yellow-400/70",
