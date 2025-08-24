@@ -1,0 +1,175 @@
+@import "tailwindcss";
+
+:root {
+  --blur: 0px;
+  --opacity: 0.5;
+  --background: #ffffff;
+  --foreground: #000000;
+  --opaque: rgba(0, 0, 0, 0.5);
+  --bubble: rgba(255, 255, 255,0.5);
+  --bubble-hover: rgba(240, 240, 240, 0.5);
+  --shadow: inset 1px 1px var(--blur) var(--blur) rgba(0,0,0, var(--opacity)), inset -1px -1px var(--blur) var(--blur) rgba(0,0,0, var(--opacity));
+  --shadow-hover: inset -1px 1px var(--blur) var(--blur) rgba(0,0,0, var(--opacity)), inset 1px -1px var(--blur) var(--blur) rgba(0,0,0, var(--opacity));
+  --drop-shadow: 4px 4px 0px 0px rgba(0,0,0, var(--opacity))
+  --c-red: #FF4747;
+  --a-green: #73E546;
+  --s-blue: #47BEFF;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #212121;
+    --foreground: #ffffff;
+    --bubble: rgba(0, 0, 0,0.5);
+    --bubble-hover: rgba(0, 0, 0, 0.5);
+    --shadow: inset 1px 1px var(--blur) var(--blur) rgba(255,255,255, var(--opacity)), inset -1px -1px var(--blur) var(--blur) rgba(255,255,255, var(--opacity));
+    --shadow-hover: inset -1px 1px var(--blur) var(--blur) rgba(255,255,255, var(--opacity)), inset 1px -1px var(--blur) var(--blur) rgba(255,255,255, var(--opacity));
+    --drop-shadow: 4px 4px 0px 0px rgba(255,255,255, var(--opacity))
+    --c-red: #FF4747;
+    --a-green: #73E546;
+    --s-blue: #47BEFF;
+  }
+}
+
+@keyframes scroll-horizontal {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* scroll left by half its width */
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.bubble {
+  background-color: var(--bubble);
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease-in-out;
+}
+
+.bubble:hover {
+  background-color: var(--bubble-hover);
+  box-shadow: var(--shadow-hover);
+}
+
+.drop-shadow {
+  box-shadow: var(--drop-shadow);
+}
+
+.text-shadow {
+  text-shadow: 4px 4px 10px rgba(0,0,0,0.25)
+}
+
+.scroll-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.round {
+  border-radius: 2rem;
+}
+
+.gap {
+  gap: 1rem;
+} 
+
+@media (min-width: 1024px) {
+  .gap {
+    gap: 2rem;
+  }
+} 
+
+
+/* Mobile default */
+.fxxsmall {
+  font-size: 0.625rem;   /* very tiny text */
+}
+.fxsmall {
+  font-size: 0.75rem;    /* extra-small / captions */
+}
+.fsmall {
+  font-size: 1rem;       /* normal paragraph */
+}
+.fmedium {
+  font-size: 1.125rem;   /* subtitle */
+}
+.flarge {
+  font-size: 1.5rem;     /* section heading */
+}
+.fxlarge {
+  font-size: 2rem;       /* header/title */
+}
+.fxxlarge {
+  font-size: 3rem;       /* really big */
+}
+.fhuge {
+  font-size: 5rem;       /* MASSIVE hero text */
+}
+
+/* Tablet screens (sm: ≥640px) */
+@media (min-width: 640px) {
+  .fxxsmall {
+    font-size: 0.75rem;
+  }
+  .fxsmall {
+    font-size: 0.875rem;
+  }
+  .fsmall {
+    font-size: 1.125rem;
+  }
+  .fmedium {
+    font-size: 1.25rem;
+  }
+  .flarge {
+    font-size: 1.75rem;
+  }
+  .fxlarge {
+    font-size: 2.5rem;
+  }
+  .fxxlarge {
+    font-size: 4rem;
+  }
+  .fhuge {
+    font-size: 6rem;
+  }
+}
+
+/* Desktop screens (lg: ≥1024px) */
+@media (min-width: 1024px) {
+  .fxxsmall {
+    font-size: 0.875rem;
+  }
+  .fxsmall {
+    font-size: 1rem;
+  }
+  .fsmall {
+    font-size: 1.25rem;
+  }
+  .fmedium {
+    font-size: 1.5rem;
+  }
+  .flarge {
+    font-size: 2rem;
+  }
+  .fxlarge {
+    font-size: 3rem;
+  }
+  .fxxlarge {
+    font-size: 5rem;
+  }
+  .fhuge {
+    font-size: 8rem;
+  }
+}

@@ -1,0 +1,44 @@
+/* [project]/app/admin/mentions.css [app-client] (css) */
+.mentions {
+  border: 1px solid #ccc;
+  border-radius: .75rem;
+  min-height: 120px;
+  padding: .75rem;
+  font-size: 14px;
+}
+
+.mentions__control {
+  width: 100%;
+  display: inline-block;
+}
+
+.mentions__highlighter {
+  padding: .25rem;
+}
+
+.mentions__input {
+  width: 100%;
+  font-size: inherit;
+  border: none;
+  outline: none;
+}
+
+.mentions__suggestions__list {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: .5rem;
+  max-height: 150px;
+  margin-top: .25rem;
+  overflow-y: auto;
+}
+
+.mentions__suggestions__item {
+  cursor: pointer;
+  padding: .5rem 1rem;
+}
+
+.mentions__suggestions__item--focused {
+  background: #f0f0f0;
+}
+
+/*# sourceMappingURL=app_admin_mentions_0f2fe2d3.css.map*/
