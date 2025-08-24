@@ -1,12 +1,14 @@
+import mongoose from "mongoose";
+
 declare global {
   var mongoose: {
-    conn: any;
-    promise: Promise<any> | null;
+    conn: mongoose.Mongoose | null;
+    promise: Promise<mongoose.Mongoose> | null;
   } | undefined;
 
   interface LinkType {
     url: string;
-    type: string; // "image" or "embed"
+    type: string;
   }
 
   interface ExperienceType {
