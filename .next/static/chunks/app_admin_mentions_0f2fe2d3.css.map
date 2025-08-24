@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["file:///Users/nroohh/Desktop/COMMA/app/admin/mentions.css"],"sourcesContent":[".mentions {\n  min-height: 120px;\n  padding: 0.75rem;\n  border: 1px solid #ccc;\n  border-radius: 0.75rem;\n  font-size: 14px;\n}\n\n.mentions__control {\n  display: inline-block;\n  width: 100%;\n}\n\n.mentions__highlighter {\n  padding: 0.25rem;\n}\n\n.mentions__input {\n  outline: none;\n  border: none;\n  width: 100%;\n  font-size: inherit;\n}\n\n.mentions__suggestions__list {\n  background: white;\n  border: 1px solid #ddd;\n  border-radius: 0.5rem;\n  margin-top: 0.25rem;\n  max-height: 150px;\n  overflow-y: auto;\n}\n\n.mentions__suggestions__item {\n  padding: 0.5rem 1rem;\n  cursor: pointer;\n}\n\n.mentions__suggestions__item--focused {\n  background: #f0f0f0;\n}\n"],"names":[],"mappings":"AAAA;;;;;;;;AAQA;;;;;AAKA;;;;AAIA;;;;;;;AAOA;;;;;;;;;AASA;;;;;AAKA","debugId":null}}]
+}

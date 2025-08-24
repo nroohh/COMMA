@@ -1,12 +1,22 @@
 import mongoose from 'mongoose';
 
+const linkSchema = new mongoose.Schema({
+  url: { type: String, required: true },
+  type: { type: String },
+});
+
+
 const experienceSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true,
   },
-  images: {
-    type: [Object],
+  cover: {
+    type: linkSchema,
+    required: true,
+  },
+  evidence: {
+    type: linkSchema,
     required: true,
   },
   strands: {
@@ -21,10 +31,6 @@ const experienceSchema = new mongoose.Schema({
     type: [String],
     required: true,
   },
-  hashtags: {
-    type: [String],
-    required: true,
-  },
   los: {
     type: [String],
     required: true,
@@ -33,11 +39,15 @@ const experienceSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  timeline: {
+    type: [String],
+    required: true,
+  },
   tips: {
-    type: String,
+    type: [String],
     required: true,
   },
 });
 
 
-export const Experience =   mongoose.models.Experience || mongoose.model('Experience', experienceSchema);
+export const Experience = mongoose.models.Experience || mongoose.model('Experience', experienceSchema);

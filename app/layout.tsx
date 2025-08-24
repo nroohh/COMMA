@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Bad_Script } from "next/font/google";
-
+import Header from "./_components/header";
 
 const badScript = Bad_Script({
   variable: "--font-bad-script",
@@ -29,29 +29,10 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}>
-        <header className="fixed top-0 left-0 w-full h-16 bg-[var(--background)] z-50 p-4">
-          <div className="relative flex items-center w-full px-4">
-            <img
-              src="/favicon.svg"
-              alt="Logo"
-              className="h-12 w-12 var(--foreground) justify-between"
-            />
-            <nav className="absolute left-1/2 top-1/2 transform -translate-x-1/2 flex space-x-20">
-              <a href="/" className="var(--foreground) flex items-center justify-center text-lg">
-                Home
-              </a>
-              <a href="/#cas" className="var(--foreground) flex items-center justify-center text-lg">
-                Cas
-              </a>
-              <a href="/about" className="var(--foreground) flex items-center justify-center text-lg">
-                About
-              </a>
-            </nav>
-          </div>
-        </header>
-        <main className="pt-[80px] snap-y snap-mandatory h-screen overflow-y-scroll overflow-x-hidden">
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${badScript.variable}`}>
+      <body className={'flex  antialiased h-screen w-screen overflow-x-hidden'}>
+        <Header />
+        <main className="static flex-col justify-center items-center w-screen h-full overflow-hidden">
           {children}
         </main>
       </body>

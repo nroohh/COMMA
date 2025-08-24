@@ -1,225 +1,76 @@
-'use client';
+import React from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+import SearchBar from "./_components/searchBar";
+import Footer from "./_components/footer";
+import CardList from "./_components/cardList";
+import Background from "./_components/background";
 
-import { useEffect, useRef, useState } from "react";
-
-export function SearchBar({
-  onSearch,
-  onEnter,
-}: {
-  onSearch: (query: string) => void;
-  onEnter: (query: string) => void;
-}) {
-  const [query, setQuery] = useState("");
-  const [isActive, setIsActive] = useState(false);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setQuery(e.target.value);
-    if (isActive) {
-      onSearch(e.target.value);
-    }
-  };
-
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter" && isActive) {
-      onEnter(query);
-    }
-  };
-
-  const handleCircleClick = () => {
-    if (query.trim()) {
-      onEnter(query);
-    }
-  };
-
+function Content() {
   return (
-    <div className="relative w-[487px] h-11">
-      <input
-        type="text"
-        value={query}
-        onChange={handleChange}
-        onKeyDown={handleKeyDown}
-        onFocus={() => setIsActive(true)}
-        onBlur={() => setIsActive(false)}
-        placeholder="search a CAS experience"
-        className="absolute left-4 top-2 w-[440px] h-7 bg-transparent text-[var(--foreground)] placeholder-[var(--foreground)]/40 outline-none"
-      />
-      <div className="w-[487px] h-11 left-0 top-0 absolute bg-[var(--background)]/60 rounded-3xl pointer-events-none" />
-      <button
-        type="button"
-        onClick={handleCircleClick}
-        className="w-5 h-5 left-[442px] top-[10px] absolute rounded-full border-[3px] border-[var(--foreground)] bg-transparent"
-        aria-label="검색 실행"
-        // Need to add 'bar' (돋보기 모양)
-      />
-    </div>
-  );
+    <>
+      <section id="home" className="relative flex-col snap-start h-screen w-screen flex items-center justify-center gap-10">
+        <div className="text-center text-[var(--foreground)] fhuge font-['Bad_Script'] text-shadow leading-none">
+          Our sweet <br />
+          comma,
+        </div>
+        <div className="bubble rounded-full w-[80vw] md:w-[70vw] lg:w-[60vw] xl:w-[50vw] 2xl:w-[40vw]">
+          <SearchBar />
+        </div>
+        
+      </section>
+      <section id="cas" className="relative snap-start h-screen w-screen flex justify-center items-center">
+        <CardList />
+      </section>
+      <section id="about" className="relative snap-start h-screen w-full flex items-center justify-center">
+        <div className="flex flex-col text-center w-[80%] items-center justify-center overflow-hidden gap-5">
+          <div className="text-[var(--foreground)] leading-[2]">
+            <h1 className="font-sans text-[6vw] lg:text-[4vw]">
+              나의 성장, 우리의 이야기
+            </h1>
+            <h1 className="font-['Bad_Script'] text-[12vw] lg:text-[8vw]">
+              CAS Portfolio
+            </h1>
+          </div>
+          <p className="flex flex-row items-center justify-center text-[var(--foreground)] text-[3vw] lg:text-[2vw] font-sans tracking-wider">
+            김민솔, 김시우, 임예원
+          </p>
+        </div>
+      </section>
+      <section className="relative snap-start h-screen w-full flex flex-col lg:flex-row items-center justify-center gap-8">
+        <div className="flex flex-col justify-center items-center lg:items-start text-sm lg:text-lg xl:text-xl 2xl:text-2xl text-left h-[60%] whitespace-pre-line">
+          <p className="text-center flex-grow-[1]">이곳은 Creativity, Activity, Service,</p>
+          <p className="text-center flex-grow-[1]">세 가지 활동 속에서 IB 학생들이 배우고, 느끼고,</p>
+          <p className="text-center flex-grow-[1]">성장한 과정을 기록한 공간입니다.</p>
+          <p className="text-center flex-grow-[1]">단순한 활동을 넘어, 내가 세상과 연결되고,</p>
+          <p className="text-center flex-grow-[1]">공동체에 기여하며, 스스로의 한계를 넘어선 발자취를 남깁니다.</p>
+          <p className="text-center flex-grow-[2]"></p>
+          <p className="text-center flex-grow-[1]">사진 한 장, 기록 한 줄,</p>
+          <p className="text-center flex-grow-[1]">작은 아이디어 하나까지.</p>
+          <p className="text-center flex-grow-[1]">이 모든 것이 나의 여정이자 이야기입니다.</p>
+          <p className="text-center flex-grow-[2]"></p>
+          <p className="text-center flex-grow-[1]">시간이 흘러도 사라지지 않을</p>
+          <p className="text-center flex-grow-[1]">나의 소중한 경험과 추억들을</p>
+          <p className="text-center flex-grow-[1]">모두서 이곳에서 확인해보세요.</p>
+        </div>
+        <div className="h-[60%] hidden lg:block">
+          <img className="object-cover rounded-4xl h-full aspect-[5/8]" src="https://static.wixstatic.com/media/b7782b_d7fd195111d942b393c2196d2e6decc3~mv2.jpg/v1/fill/w_640,h_314,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/b7782b_d7fd195111d942b393c2196d2e6decc3~mv2.jpg" alt="cover" />
+        </div>
+      </section>
+      <div className="snap-end flex items-center justify-center">
+        <Footer />
+      </div>
+    </>
+  )
 }
 
 export default function Home() {
-  const firstPageRef = useRef<HTMLDivElement>(null);
-  const casPageRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const sections = [
-      { id: "home", ref: firstPageRef },
-      { id: "cas", ref: casPageRef },
-    ];
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        const id = (entry.target as HTMLElement).id;
-        if (entry.isIntersecting && window.location.hash !== `#${id}`) {
-          history.replaceState(null, "", `#${id}`);
-        }
-      });
-    }, {
-      rootMargin: "-80px 0px 0px 0px",
-      threshold: [0.5],
-    });
-
-    sections.forEach(({ ref }) => {
-      if (ref.current) observer.observe(ref.current);
-    });
-
-    return () => observer.disconnect();
-  }, []);
-
-  const handleSearch = (query: string) => {
-    console.log("검색 중:", query);
-  };
-
-  const handleEnter = (query: string) => {
-    alert(`검색 실행: ${query}`);
-  };
-
-  const letterColors: Record<string, string> = {
-    C: "bg-red-500",
-    A: "bg-lime-400",
-    S: "bg-sky-400/70",
-    P: "bg-yellow-400/70",
-  };
-
-  const [selectedLetters, setSelectedLetters] = useState<Set<string>>(new Set());
-
-  const handleClick = (letter: string) => {
-    setSelectedLetters(prev => {
-      const newSet = new Set(prev);
-      newSet.has(letter) ? newSet.delete(letter) : newSet.add(letter);
-      return newSet;
-    });
-  };
-
-  function generateItems(count: number, offset = 0) {
-    return Array.from({ length: count }, (_, i) => ({
-      id: i + offset,
-      image: "https://via.placeholder.com/100", // Replace with actual image URLs
-      title: `CAS Sample ${i + offset + 1}`,
-    }));
-  }
-
-  const [casItems, setCasItems] = useState(generateItems(9));
-  const loaderRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        setCasItems(prev => [...prev, ...generateItems(6, prev.length)]);
-      }
-    }, {
-      rootMargin: "100px",
-    });
-
-    if (loaderRef.current) observer.observe(loaderRef.current);
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <div className="snap-y snap-mandatory h-screen" style={{ scrollPaddingTop: "80px" }}>
-      {/* First Page */}
-      <div
-        id="home"
-        ref={firstPageRef}
-        className="Page first snap-start w-full h-screen flex justify-center items-center bg-[var(--background)] relative"
-        style={{ transform: "translateY(-40px)" }}
-      >
-        <div className="relative w-full max-w-[1430px] h-[664px]">
-          {/* Decorative lights */}
-          <div className="relative w-full h-full pointer-events-none">
-            <div className="absolute w-[350px] h-24 bg-red-500 rounded-[300px] blur-xl" style={{ left: "calc(50% - 751px)", top: "calc(50% - 248px)" }} />
-            <div className="absolute w-[483px] h-14 bg-lime-400 rounded-[300px] blur-xl" style={{ left: "calc(50% + 210px)", top: "calc(50% + 133px)" }} />
-            <div className="absolute w-[200px] h-20 bg-sky-400/70 rounded-[93px] blur-xl" style={{ left: "calc(50% + 580px)", top: "calc(50% + 202px)" }} />
-          </div>
-
-          <div className="flex flex-col items-center justify-center absolute inset-0">
-            <div className="w-[532px] h-72 text-center text-[var(--foreground)] text-8xl font-normal font-[var(--font-bad-script)] leading-[100px] [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)] translate-y-10">
-              Our sweet <br />
-              comma,
-            </div>
-            <div className="w-[487px] h-11 relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] dark:shadow-[0_4px_10px_rgba(255,255,255,0.25)] -mt-6 rounded-3xl">
-              <SearchBar onSearch={handleSearch} onEnter={handleEnter} />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* CAS Page */}
-      <div
-      id="cas"
-      ref={casPageRef}
-      className="Page cas snap-start w-full min-h-[150vh] bg-[var(--background)] px-4 md:px-8 pt-28 relative"
-    >
-        {/* Main layout */}
-        <div className="flex flex-row gap-8 relative z-10 items-start">
-         {/* Condition Box */}
-        <div
-        className="sticky top-20 z-20 flex-shrink-0 min-w-[56px] max-w-[72px] px-1 md:min-w-[64px] md:max-w-[88px] md:px-2"
-        >
-  <div className="bg-[var(--background)] rounded-xl shadow-md p-2 w-full mx-auto relative">
-    <div className="flex flex-col gap-4 items-center">
-      {["C", "A", "S", "P"].map((letter) => {
-        const isSelected = selectedLetters.has(letter);
-        return (
-          <div
-            key={letter}
-            className="relative w-14 h-14 transition-all duration-300 cursor-pointer hover:h-24"
-            onClick={() => handleClick(letter)}
-          >
-            <div
-              className={`absolute inset-0 rounded-full transition-colors duration-300 ${
-                isSelected ? letterColors[letter] : "bg-[var(--background)]"
-              }`}
-              style={{ boxShadow: "var(--button1-shadow)" }}
-            />
-            <div className="absolute inset-0 flex items-center justify-center text-[var(--foreground)] text-xl font-normal font-['Geist']">
-              {letter}
-            </div>
-          </div>
-        );
-      })}
-    </div>
-  </div>
-</div>
-          {/* CAS Samples */}
-          <div className="flex-1">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-              {casItems.map((item) => (
-                <div
-                  key={item.id}
-                  className="rounded-2xl bg-[var(--background)] text-[var(--foreground)] shadow p-4 aspect-square flex flex-col items-center justify-center"
-                >
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-20 h-20 object-contain mb-2"
-                  />
-                  <p className="text-center text-sm font-medium">{item.title}</p>
-                </div>
-              ))}
-            </div>
-            <div ref={loaderRef} className="h-10" />
-          </div>
-        </div>
+    <div className="flex scrollContainer scroll-smooth justify-center items-start h-screen w-[100vw] overflow-y-scroll overflow-x-hidden snap-y snap-mandatory">
+      <Background />
+      <div className="content self-start w-full">
+        <Content />
       </div>
     </div>
   );
