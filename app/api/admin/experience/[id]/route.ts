@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
+
 import { NextResponse } from "next/server";
 import { dbConnect } from "@/app/_lib/db";
 import { Experience } from "@/app/_models/experience";
 
-// DELETE /api/admin/experience/[id]
-export async function DELETE({ params }: { params: { id: string } }) {
-    const { id } = params;
+export async function DELETE(request: Request, context: { params: { id: string } }) {
+    const { id } = context.params;
     try {
         await dbConnect();
         const deletedExperience = await Experience.findByIdAndDelete(id);
@@ -20,9 +20,8 @@ export async function DELETE({ params }: { params: { id: string } }) {
     }
 }
 
-// GET /api/admin/experience/[id]
-export async function GET({ params }: { params: { id: string } }) {
-    const { id } = params;
+export async function GET(request: Request, context: { params: { id: string } }) {
+    const { id } = context.params;
     try {
         await dbConnect();
         const experience = await Experience.findById(id);
@@ -35,24 +34,11 @@ export async function GET({ params }: { params: { id: string } }) {
     }
 }
 
-// PUT /api/admin/experience/[id]
-export async function PUT({ params, request }: { params: { id: string }; request: Request }) {
-    const { id } = params;
+export async function PUT(request: Request, context: { params: { id: string } }) {
+    const { id } = context.params;
     try {
         const experience: ExperienceType = await request.json();
-
-        if (
-            !experience.title ||
-            !experience.cover ||
-            !experience.evidence ||
-            !experience.strands ||
-            !experience.timeline ||
-            !experience.dates ||
-            !experience.members ||
-            !experience.los ||
-            !experience.description ||
-            !experience.tips
-        ) {
+        if (!experience.title || !experience.cover || !experience.evidence || !experience.strands || !experience.timeline || !experience.dates || !experience.members || !experience.los || !experience.description || !experience.tips) {
             return NextResponse.json({ error: "bad request" }, { status: 400 });
         }
 
