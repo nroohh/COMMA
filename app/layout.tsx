@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Bad_Script } from "next/font/google";
 import Header from "./_components/header";
+import { Suspense } from "react";
 
 const badScript = Bad_Script({
   variable: "--font-bad-script",
@@ -31,7 +32,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${badScript.variable}`}>
       <body className={'flex  antialiased h-screen w-screen overflow-x-hidden'}>
-        <Header />
+        <Suspense>
+          <Header />
+        </Suspense>
         <main className="static flex-col justify-center items-center w-screen h-full overflow-hidden">
           {children}
         </main>

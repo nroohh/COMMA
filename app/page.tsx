@@ -6,6 +6,8 @@ import SearchBar from "./_components/searchBar";
 import Footer from "./_components/footer";
 import CardList from "./_components/cardList";
 import Background from "./_components/background";
+import { Suspense } from "react";
+
 
 function Content() {
   return (
@@ -21,7 +23,9 @@ function Content() {
         
       </section>
       <section id="cas" className="relative snap-start h-screen w-screen flex justify-center items-center">
-        <CardList />
+        <Suspense>
+          <CardList />
+        </Suspense>
       </section>
       <section id="about" className="relative snap-start h-screen w-full flex items-center justify-center">
         <div className="flex flex-col text-center w-[80%] items-center justify-center overflow-hidden gap-5">
