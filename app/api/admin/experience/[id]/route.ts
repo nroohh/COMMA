@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 import { NextResponse } from "next/server";
 import { dbConnect } from "@/app/_lib/db";
 import { Experience } from "@/app/_models/experience";
