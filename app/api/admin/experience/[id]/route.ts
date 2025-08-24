@@ -5,8 +5,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { dbConnect } from "@/app/_lib/db";
 import { Experience } from "@/app/_models/experience";
 
-export async function DELETE(request: Request, context: { params: { id: string } }) {
-    const { id } = context.params;
+export async function DELETE(request: Request, context: { params: Promise<{ id: string }> }) {
+    const { id } = await context.params;
     try {
         await dbConnect();
         const deletedExperience = await Experience.findByIdAndDelete(id);
@@ -39,8 +39,8 @@ export async function GET(
   }
 }
 
-export async function PUT(request: Request, context: { params: { id: string } }) {
-    const { id } = context.params;
+export async function PUT(request: Request, context: { params: Promise<{ id: string }> }) {
+    const { id } = await context.params;
     try {
         const experience: ExperienceType = await request.json();
         if (!experience.title || !experience.cover || !experience.evidence || !experience.strands || !experience.timeline || !experience.dates || !experience.members || !experience.los || !experience.description || !experience.tips) {
