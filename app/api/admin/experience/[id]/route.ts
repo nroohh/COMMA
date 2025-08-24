@@ -21,9 +21,9 @@ export async function DELETE(request: Request, context: { params: { id: string }
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } } // destructured context
+  context: { params: { id: string } } // Corrected syntax: type annotation is on the 'context' parameter
 ) {
-  const { id } = params;
+  const { id } = context.params; // Destructure `params` from the `context` object
 
   try {
     await dbConnect();
