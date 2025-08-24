@@ -1,8 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
-
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { dbConnect } from "@/app/_lib/db";
 import { Experience } from "@/app/_models/experience";
 
@@ -20,18 +19,24 @@ export async function DELETE(request: Request, context: { params: { id: string }
     }
 }
 
-export async function GET(request: Request, context: { params: { id: string } }) {
-    const { id } = context.params;
-    try {
-        await dbConnect();
-        const experience = await Experience.findById(id);
-        if (!experience) {
-            return NextResponse.json({ error: "not found" }, { status: 404 });
-        }
-        return NextResponse.json(experience, { status: 200 });
-    } catch (error: unknown) {
-        return NextResponse.json({ error: "internal server error" }, { status: 500 });
+export async function GET(
+  request: NextRequest,
+  { params }: { params: { id: string } } // destructured context
+) {
+  const { id } = params;
+
+  try {
+    await dbConnect();
+    const experience = await Experience.findById(id);
+
+    if (!experience) {
+      return NextResponse.json({ error: "not found" }, { status: 404 });
     }
+
+    return NextResponse.json(experience, { status: 200 });
+  } catch (error: unknown) {
+    return NextResponse.json({ error: "internal server error" }, { status: 500 });
+  }
 }
 
 export async function PUT(request: Request, context: { params: { id: string } }) {
