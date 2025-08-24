@@ -18,7 +18,9 @@ function Content() {
           comma,
         </div>
         <div className="bubble rounded-full w-[80vw] md:w-[70vw] lg:w-[60vw] xl:w-[50vw] 2xl:w-[40vw]">
-          <SearchBar />
+          <Suspense>
+            <SearchBar />
+          </Suspense>
         </div>
         
       </section>
