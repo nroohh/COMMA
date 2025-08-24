@@ -21,9 +21,9 @@ export async function DELETE(request: Request, context: { params: { id: string }
 
 export async function GET(
   request: NextRequest,
-  context: { params: { id: string } } // This is the correct signature
+  context: { params: Promise<{ id: string }> } // This is the correct signature
 ) {
-  const { id } = context.params; // Destructure `id` from `context.params`
+  const { id } = await context.params; // Destructure `id` from `context.params`
 
   try {
     await dbConnect();
