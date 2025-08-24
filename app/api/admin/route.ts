@@ -2,8 +2,12 @@ import { NextResponse } from "next/server";
 
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
 
+interface AdminRequestBody {
+  password: string;
+}
+
 export async function POST(request: Request) {
-  const body = await request.json();
+  const body: AdminRequestBody = await request.json();
   const { password } = body;
 
   if (password === ADMIN_PASSWORD) {

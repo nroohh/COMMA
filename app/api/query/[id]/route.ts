@@ -12,7 +12,7 @@ export async function GET(request: Request, context: { params: { id: string } })
             return NextResponse.json({ error: "not found" }, { status: 404 }); // not found status
         }
         return NextResponse.json(experience, { status: 200 }); // ok status
-    } catch (error: any) {
+    } catch (error: unknown) {
         return NextResponse.json({ error: "internal server error" }, { status: 500 }); // internal server error status
     }
 }

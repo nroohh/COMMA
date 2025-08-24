@@ -22,7 +22,6 @@ export default function Header() {
   }
 
   function runAnimation(isMobile: boolean, hash: string) {
-    console.log(hash)
     if (!isMobile) {
       if (hash === "#cas") {
         const tl1 = gsap.timeline({ defaults: { duration: 1, ease: "power1.out" } });
