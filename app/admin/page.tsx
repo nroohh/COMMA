@@ -45,7 +45,6 @@ export default function Admin() {
 
     useEffect(() => {
         const parsedLos = Array.from(text.matchAll(/(#[^\s#]+)\s?/g), m => m[1]);
-        console.log(parsedLos)
         if (editingExp) {
             setEditingExp({ ...editingExp, los: parsedLos });
         }
@@ -280,7 +279,7 @@ export default function Admin() {
                     
                                 <div className="flex ml-auto flex-col justify-between h-full items-end py-5">
                                     <button onClick={() => setEditingExp(exp)}>Edit</button>
-                                    <button onClick={() => deleteExperience(exp._id as string)}>Delete</button>
+                                    <button>Delete</button>
                                 </div>
                             </div>
                         ))}
@@ -525,7 +524,7 @@ export default function Admin() {
 
     return (
         <div className="flex justify-center items-center h-screen">
-            <form className="flex justify-center items-center bubble rounded-full h-[5vh] px-5" onSubmit={handleSubmit}>
+            <form className="flex justify-center items-center bubble rounded-full min-h-[50px] h-[5vh] px-5" onSubmit={handleSubmit}>
                 <input
                     type="password"
                     value={password}

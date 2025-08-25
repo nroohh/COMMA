@@ -78,41 +78,44 @@ __turbopack_context__.s({
 });
 var __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/mongoose [external] (mongoose, cjs)");
 ;
-if (!("TURBOPACK ident replacement", globalThis).mongoose) {
-    ("TURBOPACK ident replacement", globalThis).mongoose = {
+if (!globalThis.mongoose) {
+    globalThis.mongoose = {
         conn: null,
         promise: null
     };
 }
 async function dbConnect() {
     try {
-        if (("TURBOPACK ident replacement", globalThis).mongoose && ("TURBOPACK ident replacement", globalThis).mongoose.conn) {
+        if (globalThis.mongoose?.conn) {
             console.log("Connected from previous");
-            return ("TURBOPACK ident replacement", globalThis).mongoose.conn;
-        } else {
-            console.log(process.env.MONGO_URL);
-            const conString = process.env.MONGO_URL;
-            const promise = __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__["default"].connect(conString, {
-                dbName: "oursweetcomma(db)",
-                autoIndex: true
-            });
-            ("TURBOPACK ident replacement", globalThis).mongoose = {
-                conn: await promise,
-                promise
-            };
-            console.log("Newly connected");
-            return await promise;
+            return globalThis.mongoose.conn;
         }
+        console.log(process.env.MONGO_URL);
+        const conString = process.env.MONGO_URL;
+        const promise = __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__["default"].connect(conString, {
+            dbName: "oursweetcomma(db)",
+            autoIndex: true
+        });
+        globalThis.mongoose = {
+            conn: await promise,
+            promise
+        };
+        console.log("Newly connected");
+        return await promise;
     } catch (error) {
-        console.error("Error connecting to the database:", error);
-        throw new Error(error.message);
+        if (error instanceof Error) {
+            console.error("Error connecting to the database:", error);
+            throw new Error(error.message);
+        }
+        throw new Error("Unknown error connecting to the database");
     }
 }
 const disconnect = ()=>{
-    if (!("TURBOPACK ident replacement", globalThis).mongoose.conn) {
-        return;
-    }
-    ("TURBOPACK ident replacement", globalThis).mongoose = null;
+    if (!globalThis.mongoose?.conn) return;
+    globalThis.mongoose = {
+        conn: null,
+        promise: null
+    };
     __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__["default"].disconnect();
 };
 }),
@@ -202,7 +205,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$_models$2f$experience
 ;
 ;
 async function GET(request, context) {
-    const { id } = context.params;
+    const { id } = await context.params;
     try {
         await (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$_lib$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["dbConnect"])();
         const experience = await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$_models$2f$experience$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["Experience"].findById(id);

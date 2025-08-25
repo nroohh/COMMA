@@ -7,9 +7,6 @@ import Background from '@/app/_components/background';
 import VideoEmbed from '@/app/_components/videoEmbed';
 import StickyNote from '@/app/_components/stickyNote';
 
-
-
-
 // export { YouTubeEmbed };
 
 export default function Info() {
@@ -109,11 +106,11 @@ export default function Info() {
                     </div>
                 </section>
                 <section className="snap-start flex justify-center items-center flex-col w-full h-screen">
-                    <div className='flex justify-center items-center flex-col h-[80vh] sm:w-[60vw] lg:w-[80vw] xl:w-[60vw] gap'>
+                    <div className='flex justify-center items-center flex-col max-h-[80vh] sm:w-[60vw] lg:w-[80vw] xl:w-[60vw] gap'>
                         <div className="h-[5vh] min-h-[50px] justify-center w-full items-center flex bubble round">
                             Tips
                         </div>
-                        <div className="flex-1 p-5 gap  h-[80vh] sm:w-[60vw] lg:w-[80vw] xl:w-[60vw] bg-orange-300/60 round shadow-[var(--drop-shadow)] justify-center items-center overflow-scroll scroll-hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                        <div className="flex-1 p-5 gap  max-h-[80vh] sm:w-[60vw] lg:w-[80vw] xl:w-[60vw]  drop-shadow transition-[0.3] bg-orange-300/60 round justify-center items-center overflow-scroll scroll-hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                             {data?.tips.map((tip, index) => (
                                 <StickyNote key={index} text={tip as string} />
                             ))}
