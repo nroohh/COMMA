@@ -107,10 +107,10 @@ export default function Admin() {
 
     // Delete experience
     async function deleteExperience(id: string) {
-        await fetch("/api/admin/experiences", {
-        method: "DELETE",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ id }),
+
+        await fetch(`/api/admin/experience/${id}`, {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" },
         });
         fetchExperiences();
     }

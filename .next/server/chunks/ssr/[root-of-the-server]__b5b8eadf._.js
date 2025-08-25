@@ -152,7 +152,6 @@ function Header() {
         }, ms);
     }
     function runAnimation(isMobile, hash) {
-        console.log(hash);
         if (!isMobile) {
             if (hash === "#cas") {
                 const tl1 = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].timeline({
@@ -333,12 +332,12 @@ function Header() {
                     className: "filter dark:invert h-full"
                 }, void 0, false, {
                     fileName: "[project]/app/_components/header.tsx",
-                    lineNumber: 212,
+                    lineNumber: 211,
                     columnNumber: 13
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/_components/header.tsx",
-                lineNumber: 211,
+                lineNumber: 210,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
@@ -353,12 +352,12 @@ function Header() {
                             children: "Home"
                         }, void 0, false, {
                             fileName: "[project]/app/_components/header.tsx",
-                            lineNumber: 217,
+                            lineNumber: 216,
                             columnNumber: 17
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/_components/header.tsx",
-                        lineNumber: 216,
+                        lineNumber: 215,
                         columnNumber: 13
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -373,12 +372,12 @@ function Header() {
                                     children: "CAS"
                                 }, void 0, false, {
                                     fileName: "[project]/app/_components/header.tsx",
-                                    lineNumber: 223,
+                                    lineNumber: 222,
                                     columnNumber: 21
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/_components/header.tsx",
-                                lineNumber: 222,
+                                lineNumber: 221,
                                 columnNumber: 17
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -386,18 +385,18 @@ function Header() {
                                 className: "flex justify-center items-center opacity-0 w-0 pointer-events-none",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$_components$2f$searchBar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                                     fileName: "[project]/app/_components/header.tsx",
-                                    lineNumber: 228,
+                                    lineNumber: 227,
                                     columnNumber: 21
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/_components/header.tsx",
-                                lineNumber: 227,
+                                lineNumber: 226,
                                 columnNumber: 17
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/_components/header.tsx",
-                        lineNumber: 221,
+                        lineNumber: 220,
                         columnNumber: 13
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -409,31 +408,31 @@ function Header() {
                             children: "About"
                         }, void 0, false, {
                             fileName: "[project]/app/_components/header.tsx",
-                            lineNumber: 232,
+                            lineNumber: 231,
                             columnNumber: 17
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/_components/header.tsx",
-                        lineNumber: 231,
+                        lineNumber: 230,
                         columnNumber: 13
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/_components/header.tsx",
-                lineNumber: 215,
+                lineNumber: 214,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "hidden md:flex h-full aspect-square"
             }, void 0, false, {
                 fileName: "[project]/app/_components/header.tsx",
-                lineNumber: 238,
+                lineNumber: 237,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/_components/header.tsx",
-        lineNumber: 210,
+        lineNumber: 209,
         columnNumber: 9
     }, this);
 }

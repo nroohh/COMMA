@@ -321,14 +321,11 @@ function Admin() {
     }
     // Delete experience
     async function deleteExperience(id) {
-        await fetch("/api/admin/experiences", {
+        await fetch(`/api/admin/experience/${id}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                id
-            })
+            }
         });
         fetchExperiences();
     }
