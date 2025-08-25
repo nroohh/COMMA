@@ -279,7 +279,7 @@ export default function Admin() {
                     
                                 <div className="flex ml-auto flex-col justify-between h-full items-end py-5">
                                     <button onClick={() => setEditingExp(exp)}>Edit</button>
-                                    <button>Delete</button>
+                                    <button onClick={() => deleteExperience(exp?._id as string)}>Delete</button>
                                 </div>
                             </div>
                         ))}
@@ -506,7 +506,6 @@ export default function Admin() {
                                             </button>
                                             <button
                                                 type="submit"
-                                                onClick={() => saveExperience(editingExp)}
                                                 className="bubble h-[5vh] rounded-full px-5"
                                             >
                                                 Save
