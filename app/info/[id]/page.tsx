@@ -77,7 +77,7 @@ export default function Info() {
                 <section className="snap-start flex justify-center items-center flex-row w-full h-screen">
                     <div className='flex justify-center h-[80vh] w-[80vw] sm:w-[60vw] lg:w-[80vw] xl:w-[60vw] items-center flex-col lg:flex-row gap-5'>
                         {data?.evidence?.type === "image" ? (
-                        <img src={data.evidence.url} alt="Evidence" className="w-full h-full object-cover rounded-4xl" />
+                        <img src={data.evidence.url} alt="Evidence" className="w-[40vw] sm:w-[30vw] lg:w-[40vw] xl:w-[30vw] h-full object-cover rounded-4xl" />
                         ) : (
                         <VideoEmbed embedLink={data?.evidence.url as string} />
                         )}

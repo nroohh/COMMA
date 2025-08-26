@@ -1,9 +1,6 @@
 {
-  "/admin/page": "app/admin/page.js",
-  "/api/admin/experience/route": "app/api/admin/experience/route.js",
   "/api/query/[id]/route": "app/api/query/[id]/route.js",
   "/api/query/route": "app/api/query/route.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
   "/info/[id]/page": "app/info/[id]/page.js",
   "/page": "app/page.js"
 }

@@ -371,7 +371,7 @@ function Info() {
                             data?.evidence?.type === "image" ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                                 src: data.evidence.url,
                                 alt: "Evidence",
-                                className: "w-full h-full object-cover rounded-4xl"
+                                className: "w-[40vw] sm:w-[30vw] lg:w-[40vw] xl:w-[30vw] h-full object-cover rounded-4xl"
                             }, void 0, false, {
                                 fileName: "[project]/app/info/[id]/page.tsx",
                                 lineNumber: 80,
