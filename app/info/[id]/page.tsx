@@ -35,8 +35,8 @@ export default function Info() {
                             </div>
                             <div className='hidden lg:flex lg:flex-1 lg:w-[25vw] xl:w-[20vw] overflow-hidden'>
                                 <DataBox fit="full">
-                                    <div className="flex flex-col justify-center items-center p-5 gap overflow-hidden">
-                                        <div className="flex flex-col flex-grow justify-start overflow-auto">
+                                    <div className="flex flex-col justify-center items-center p-5 overflow-hidden">
+                                        <div className="flex flex-col flex-grow justify-start gap overflow-auto">
                                             {data?.los.map((lo) => {
                                                 return (
                                                     <div key={lo} className="text-[var(--foreground)] fxsmall font-normal font-['geist'] leading-normal tracking-wide whitespace-nowrap">
@@ -77,7 +77,7 @@ export default function Info() {
                 <section className="snap-start flex justify-center items-center flex-row w-full h-screen">
                     <div className='flex justify-center h-[80vh] w-[80vw] sm:w-[60vw] lg:w-[80vw] xl:w-[60vw] items-center flex-col lg:flex-row gap-5'>
                         {data?.evidence?.type === "image" ? (
-                        <img src={data.evidence.url} alt="Evidence" className="w-[40vw] sm:w-[30vw] lg:w-[40vw] xl:w-[30vw] h-full object-cover rounded-4xl" />
+                        <img src={data.evidence.url} alt="Evidence" className="w-[80vw] sm:w-[60vw] lg:w-[40vw] xl:w-[30vw] h-full object-cover rounded-4xl" />
                         ) : (
                         <VideoEmbed embedLink={data?.evidence.url as string} />
                         )}

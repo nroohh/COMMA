@@ -167,8 +167,15 @@ function StickyNote({ text }) {
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "w-[70vw] sm:w-[50vw] md:w-[25vw] lg:w-[25vw] xl:w-[17vw] aspect-square p-5 pt-7 bg-[var(--bubble)] transition-[0.3] hover:bg-[var(--bubble-hover)] round overflow-scroll scroll-hidden drop-shadow text-left justify-center fsmall font-['geist'] leading-10",
-                children: text
+                className: "flex w-[70vw] aspect-square sm:w-[50vw] md:w-[25vw] lg:w-[25vw] xl:w-[17vw] flex-col justify-start items-center p-5 overflow-hidden bg-[var(--bubble)] pt-10 round",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "transition-[0.3] hover:bg-[var(--bubble-hover)] overflow-scroll scroll-hidden drop-shadow text-left justify-center fsmall leading-10",
+                    children: text
+                }, void 0, false, {
+                    fileName: "[project]/app/_components/stickyNote.tsx",
+                    lineNumber: 11,
+                    columnNumber: 11
+                }, this)
             }, void 0, false, {
                 fileName: "[project]/app/_components/stickyNote.tsx",
                 lineNumber: 10,
@@ -255,9 +262,9 @@ function Info() {
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$_components$2f$dataBox$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                             fit: "full",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "flex flex-col justify-center items-center p-5 gap overflow-hidden",
+                                                className: "flex flex-col justify-center items-center p-5 overflow-hidden",
                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "flex flex-col flex-grow justify-start overflow-auto",
+                                                    className: "flex flex-col flex-grow justify-start gap overflow-auto",
                                                     children: data?.los.map((lo)=>{
                                                         return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             className: "text-[var(--foreground)] fxsmall font-normal font-['geist'] leading-normal tracking-wide whitespace-nowrap",
@@ -371,7 +378,7 @@ function Info() {
                             data?.evidence?.type === "image" ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                                 src: data.evidence.url,
                                 alt: "Evidence",
-                                className: "w-[40vw] sm:w-[30vw] lg:w-[40vw] xl:w-[30vw] h-full object-cover rounded-4xl"
+                                className: "w-[80vw] sm:w-[60vw] lg:w-[40vw] xl:w-[30vw] h-full object-cover rounded-4xl"
                             }, void 0, false, {
                                 fileName: "[project]/app/info/[id]/page.tsx",
                                 lineNumber: 80,

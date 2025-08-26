@@ -1,6 +1,1 @@
-{
-  "/api/query/[id]/route": "app/api/query/[id]/route.js",
-  "/api/query/route": "app/api/query/route.js",
-  "/info/[id]/page": "app/info/[id]/page.js",
-  "/page": "app/page.js"
-}
+{}
